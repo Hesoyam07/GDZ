@@ -13,6 +13,12 @@
 		2C1CFE1B2B970E2B0004384C /* GDZ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE192B970E2B0004384C /* GDZ.xcdatamodeld */; };
 		2C1CFE1D2B970E2F0004384C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE1C2B970E2F0004384C /* Assets.xcassets */; };
 		2C1CFE202B970E2F0004384C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE1E2B970E2F0004384C /* LaunchScreen.storyboard */; };
+		2C1CFE282B9727190004384C /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE272B9727190004384C /* UIColor + ext.swift */; };
+		2C1CFE2A2B9772900004384C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE292B9772900004384C /* GoogleService-Info.plist */; };
+		2C1CFE2D2B977C460004384C /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2C1CFE2C2B977C460004384C /* FirebaseDatabase */; };
+		2C1CFE2F2B978E470004384C /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE2E2B978E470004384C /* UIButton + ext.swift */; };
+		2C1CFE322B9790650004384C /* sfuitext_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE312B9790650004384C /* sfuitext_light.otf */; };
+		2C1CFE342B97907B0004384C /* sf-ui-text-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,11 @@
 		2C1CFE1C2B970E2F0004384C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1CFE1F2B970E2F0004384C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1CFE212B970E2F0004384C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C1CFE272B9727190004384C /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
+		2C1CFE292B9772900004384C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C1CFE2E2B978E470004384C /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
+		2C1CFE312B9790650004384C /* sfuitext_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfuitext_light.otf; sourceTree = "<group>"; };
+		2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-text-bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1CFE2D2B977C460004384C /* FirebaseDatabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +68,9 @@
 		2C1CFE0F2B970E2B0004384C /* GDZ */ = {
 			isa = PBXGroup;
 			children = (
+				2C1CFE352B9795010004384C /* Extensions */,
+				2C1CFE302B9790350004384C /* Fonts */,
+				2C1CFE292B9772900004384C /* GoogleService-Info.plist */,
 				2C1CFE102B970E2B0004384C /* AppDelegate.swift */,
 				2C1CFE122B970E2B0004384C /* SceneDelegate.swift */,
 				2C1CFE142B970E2B0004384C /* ViewController.swift */,
@@ -65,6 +80,24 @@
 				2C1CFE192B970E2B0004384C /* GDZ.xcdatamodeld */,
 			);
 			path = GDZ;
+			sourceTree = "<group>";
+		};
+		2C1CFE302B9790350004384C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C1CFE312B9790650004384C /* sfuitext_light.otf */,
+				2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2C1CFE352B9795010004384C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C1CFE2E2B978E470004384C /* UIButton + ext.swift */,
+				2C1CFE272B9727190004384C /* UIColor + ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +116,9 @@
 			dependencies = (
 			);
 			name = GDZ;
+			packageProductDependencies = (
+				2C1CFE2C2B977C460004384C /* FirebaseDatabase */,
+			);
 			productName = GDZ;
 			productReference = 2C1CFE0D2B970E2B0004384C /* GDZ.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 2C1CFE042B970E2B0004384C;
+			packageReferences = (
+				2C1CFE2B2B977C460004384C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 2C1CFE0E2B970E2B0004384C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +164,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1CFE322B9790650004384C /* sfuitext_light.otf in Resources */,
 				2C1CFE202B970E2F0004384C /* LaunchScreen.storyboard in Resources */,
+				2C1CFE342B97907B0004384C /* sf-ui-text-bold.ttf in Resources */,
 				2C1CFE1D2B970E2F0004384C /* Assets.xcassets in Resources */,
+				2C1CFE2A2B9772900004384C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1CFE152B970E2B0004384C /* ViewController.swift in Sources */,
+				2C1CFE2F2B978E470004384C /* UIButton + ext.swift in Sources */,
 				2C1CFE1B2B970E2B0004384C /* GDZ.xcdatamodeld in Sources */,
 				2C1CFE112B970E2B0004384C /* AppDelegate.swift in Sources */,
+				2C1CFE282B9727190004384C /* UIColor + ext.swift in Sources */,
 				2C1CFE132B970E2B0004384C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C1CFE2B2B977C460004384C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C1CFE2C2B977C460004384C /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C1CFE2B2B977C460004384C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2C1CFE192B970E2B0004384C /* GDZ.xcdatamodeld */ = {
