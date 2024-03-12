@@ -7,12 +7,18 @@
 
 import UIKit
 
+private struct TabBarConstants {
+    static let bookImage = UIImage(named: "Books")
+    static let myBooksImage = UIImage(named: "BookWithBookmark")
+    static let favoritesImage = UIImage(named: "BookMark")
+    static let searchImage = UIImage(named: "Search")
+}
+
 final class TabBarContoller: UITabBarController {
 
         override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBarAppearance()
-        setupViewControllers()
     }
 
     private func configureTabBarAppearance() {
@@ -24,27 +30,5 @@ final class TabBarContoller: UITabBarController {
         tabBar.scrollEdgeAppearance = appearance
         tabBar.tintColor = .buyButtonColor
     }
-
-    private func setupViewControllers() {
-        //TODO: Change VC to actual VC and uncomment code below this line
-//        let vc1 = UINavigationController(rootViewController: LessonsVC())
-//        let vc2 = UINavigationController(rootViewController: MyBooksVC())
-//        let vc3 = UINavigationController(rootViewController: FavoriteVC())
-//        let vc4 = UINavigationController(rootViewController: SearchVC())
-//
-//        vc1.title = "Предметы"
-//        vc2.title = "Мои решебники"
-//        vc3.title = "Избранное"
-//        vc4.title = "Поиск"
-//
-//        vc1.tabBarItem.image = UIImage(named: "Books")
-//        vc2.tabBarItem.image = UIImage(named: "BookWithBookmark")
-//        vc3.tabBarItem.image = UIImage(named: "BookMark")
-//        vc4.tabBarItem.image = UIImage(named: "Search")
-//
-//        setViewControllers([vc1,vc2,vc3,vc4], animated: true)
-    }
-    
-
 
 }
