@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C1CFE112B970E2B0004384C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE102B970E2B0004384C /* AppDelegate.swift */; };
 		2C1CFE132B970E2B0004384C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE122B970E2B0004384C /* SceneDelegate.swift */; };
+		2C1CFE152B970E2B0004384C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE142B970E2B0004384C /* ViewController.swift */; };
 		2C1CFE1B2B970E2B0004384C /* GDZ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE192B970E2B0004384C /* GDZ.xcdatamodeld */; };
 		2C1CFE1D2B970E2F0004384C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE1C2B970E2F0004384C /* Assets.xcassets */; };
 		2C1CFE202B970E2F0004384C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE1E2B970E2F0004384C /* LaunchScreen.storyboard */; };
@@ -18,16 +19,13 @@
 		2C1CFE2F2B978E470004384C /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE2E2B978E470004384C /* UIButton + ext.swift */; };
 		2C1CFE322B9790650004384C /* sfuitext_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE312B9790650004384C /* sfuitext_light.otf */; };
 		2C1CFE342B97907B0004384C /* sf-ui-text-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */; };
-		2C1CFE612B99EFA30004384C /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE602B99EFA30004384C /* TabBarContoller.swift */; };
-		2C700E442BA0DEA3009F1BB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C700E462BA0DEA3009F1BB4 /* Localizable.strings */; };
-		2C700E492BA0DFC2009F1BB4 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C700E482BA0DFC2009F1BB4 /* Localization.swift */; };
-		2C700E542BA0EFCA009F1BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C700E532BA0EFCA009F1BB4 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C1CFE0D2B970E2B0004384C /* GDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1CFE102B970E2B0004384C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1CFE122B970E2B0004384C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2C1CFE142B970E2B0004384C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C1CFE1A2B970E2B0004384C /* GDZ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GDZ.xcdatamodel; sourceTree = "<group>"; };
 		2C1CFE1C2B970E2F0004384C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1CFE1F2B970E2F0004384C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,10 +35,6 @@
 		2C1CFE2E2B978E470004384C /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		2C1CFE312B9790650004384C /* sfuitext_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfuitext_light.otf; sourceTree = "<group>"; };
 		2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-text-bold.ttf"; sourceTree = "<group>"; };
-		2C1CFE602B99EFA30004384C /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
-		2C700E472BA0DEB7009F1BB4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2C700E482BA0DFC2009F1BB4 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
-		2C700E532BA0EFCA009F1BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,18 +68,16 @@
 		2C1CFE0F2B970E2B0004384C /* GDZ */ = {
 			isa = PBXGroup;
 			children = (
-				2C700E412BA0DD9C009F1BB4 /* Localization */,
-				2C1CFE5D2B99EF390004384C /* TabBarModule */,
 				2C1CFE352B9795010004384C /* Extensions */,
 				2C1CFE302B9790350004384C /* Fonts */,
 				2C1CFE292B9772900004384C /* GoogleService-Info.plist */,
 				2C1CFE102B970E2B0004384C /* AppDelegate.swift */,
 				2C1CFE122B970E2B0004384C /* SceneDelegate.swift */,
+				2C1CFE142B970E2B0004384C /* ViewController.swift */,
 				2C1CFE1C2B970E2F0004384C /* Assets.xcassets */,
 				2C1CFE1E2B970E2F0004384C /* LaunchScreen.storyboard */,
 				2C1CFE212B970E2F0004384C /* Info.plist */,
 				2C1CFE192B970E2B0004384C /* GDZ.xcdatamodeld */,
-				2C700E532BA0EFCA009F1BB4 /* ViewController.swift */,
 			);
 			path = GDZ;
 			sourceTree = "<group>";
@@ -106,23 +98,6 @@
 				2C1CFE272B9727190004384C /* UIColor + ext.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		2C1CFE5D2B99EF390004384C /* TabBarModule */ = {
-			isa = PBXGroup;
-			children = (
-				2C1CFE602B99EFA30004384C /* TabBarContoller.swift */,
-			);
-			path = TabBarModule;
-			sourceTree = "<group>";
-		};
-		2C700E412BA0DD9C009F1BB4 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				2C700E482BA0DFC2009F1BB4 /* Localization.swift */,
-				2C700E462BA0DEA3009F1BB4 /* Localizable.strings */,
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +145,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ru,
 			);
 			mainGroup = 2C1CFE042B970E2B0004384C;
 			packageReferences = (
@@ -191,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1CFE322B9790650004384C /* sfuitext_light.otf in Resources */,
-				2C700E442BA0DEA3009F1BB4 /* Localizable.strings in Resources */,
 				2C1CFE202B970E2F0004384C /* LaunchScreen.storyboard in Resources */,
 				2C1CFE342B97907B0004384C /* sf-ui-text-bold.ttf in Resources */,
 				2C1CFE1D2B970E2F0004384C /* Assets.xcassets in Resources */,
@@ -206,14 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1CFE152B970E2B0004384C /* ViewController.swift in Sources */,
 				2C1CFE2F2B978E470004384C /* UIButton + ext.swift in Sources */,
 				2C1CFE1B2B970E2B0004384C /* GDZ.xcdatamodeld in Sources */,
 				2C1CFE112B970E2B0004384C /* AppDelegate.swift in Sources */,
 				2C1CFE282B9727190004384C /* UIColor + ext.swift in Sources */,
 				2C1CFE132B970E2B0004384C /* SceneDelegate.swift in Sources */,
-				2C700E492BA0DFC2009F1BB4 /* Localization.swift in Sources */,
-				2C700E542BA0EFCA009F1BB4 /* ViewController.swift in Sources */,
-				2C1CFE612B99EFA30004384C /* TabBarContoller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,14 +199,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		2C700E462BA0DEA3009F1BB4 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C700E472BA0DEB7009F1BB4 /* ru */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -243,7 +206,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -304,7 +266,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
