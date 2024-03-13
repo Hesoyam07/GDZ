@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  GDZ
+
+  Created by Дмитрий on 12.03.2024.
+  
+ 
+
+*/
+"Предметы" = "Books";
+"Мои предметы" = "My books";
+"Избранное" = "Favorites";
+"Поиск" = "Search";
