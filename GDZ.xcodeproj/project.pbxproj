@@ -19,6 +19,11 @@
 		2C1CFE322B9790650004384C /* sfuitext_light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE312B9790650004384C /* sfuitext_light.otf */; };
 		2C1CFE342B97907B0004384C /* sf-ui-text-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */; };
 		2C1CFE612B99EFA30004384C /* TabBarContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CFE602B99EFA30004384C /* TabBarContoller.swift */; };
+		2C21F1DF2BA3677100E294AC /* GradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21F1DE2BA3677100E294AC /* GradeView.swift */; };
+		2C21F1E12BA3678600E294AC /* GradeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21F1E02BA3678600E294AC /* GradeModel.swift */; };
+		2C21F1E32BA3679200E294AC /* GradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21F1E22BA3679200E294AC /* GradeViewModel.swift */; };
+		2C21F1E72BA367C100E294AC /* GradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21F1E52BA367C100E294AC /* GradeCell.swift */; };
+		2C21F1E82BA367C100E294AC /* GradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C21F1E62BA367C100E294AC /* GradeCell.xib */; };
 		2C700E442BA0DEA3009F1BB4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C700E462BA0DEA3009F1BB4 /* Localizable.strings */; };
 		2C700E492BA0DFC2009F1BB4 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C700E482BA0DFC2009F1BB4 /* Localization.swift */; };
 		2C700E542BA0EFCA009F1BB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C700E532BA0EFCA009F1BB4 /* ViewController.swift */; };
@@ -38,6 +43,11 @@
 		2C1CFE312B9790650004384C /* sfuitext_light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfuitext_light.otf; sourceTree = "<group>"; };
 		2C1CFE332B97907B0004384C /* sf-ui-text-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sf-ui-text-bold.ttf"; sourceTree = "<group>"; };
 		2C1CFE602B99EFA30004384C /* TabBarContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContoller.swift; sourceTree = "<group>"; };
+		2C21F1DE2BA3677100E294AC /* GradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeView.swift; sourceTree = "<group>"; };
+		2C21F1E02BA3678600E294AC /* GradeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeModel.swift; sourceTree = "<group>"; };
+		2C21F1E22BA3679200E294AC /* GradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeViewModel.swift; sourceTree = "<group>"; };
+		2C21F1E52BA367C100E294AC /* GradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCell.swift; sourceTree = "<group>"; };
+		2C21F1E62BA367C100E294AC /* GradeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GradeCell.xib; sourceTree = "<group>"; };
 		2C700E472BA0DEB7009F1BB4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C700E482BA0DFC2009F1BB4 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		2C700E532BA0EFCA009F1BB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +84,7 @@
 		2C1CFE0F2B970E2B0004384C /* GDZ */ = {
 			isa = PBXGroup;
 			children = (
+				2C21F1DD2BA3674700E294AC /* GradeSeleciton */,
 				2C700E412BA0DD9C009F1BB4 /* Localization */,
 				2C1CFE5D2B99EF390004384C /* TabBarModule */,
 				2C1CFE352B9795010004384C /* Extensions */,
@@ -114,6 +125,50 @@
 				2C1CFE602B99EFA30004384C /* TabBarContoller.swift */,
 			);
 			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		2C21F1DD2BA3674700E294AC /* GradeSeleciton */ = {
+			isa = PBXGroup;
+			children = (
+				2C21F1E92BA367CA00E294AC /* Models */,
+				2C21F1EA2BA367D100E294AC /* ViewModels */,
+				2C21F1EB2BA367D900E294AC /* Views */,
+				2C21F1E42BA3679900E294AC /* Cell */,
+			);
+			path = GradeSeleciton;
+			sourceTree = "<group>";
+		};
+		2C21F1E42BA3679900E294AC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2C21F1E52BA367C100E294AC /* GradeCell.swift */,
+				2C21F1E62BA367C100E294AC /* GradeCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2C21F1E92BA367CA00E294AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C21F1E02BA3678600E294AC /* GradeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C21F1EA2BA367D100E294AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2C21F1E22BA3679200E294AC /* GradeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2C21F1EB2BA367D900E294AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C21F1DE2BA3677100E294AC /* GradeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2C700E412BA0DD9C009F1BB4 /* Localization */ = {
@@ -190,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C21F1E82BA367C100E294AC /* GradeCell.xib in Resources */,
 				2C1CFE322B9790650004384C /* sfuitext_light.otf in Resources */,
 				2C700E442BA0DEA3009F1BB4 /* Localizable.strings in Resources */,
 				2C1CFE202B970E2F0004384C /* LaunchScreen.storyboard in Resources */,
@@ -207,11 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1CFE2F2B978E470004384C /* UIButton + ext.swift in Sources */,
+				2C21F1E12BA3678600E294AC /* GradeModel.swift in Sources */,
 				2C1CFE1B2B970E2B0004384C /* GDZ.xcdatamodeld in Sources */,
 				2C1CFE112B970E2B0004384C /* AppDelegate.swift in Sources */,
 				2C1CFE282B9727190004384C /* UIColor + ext.swift in Sources */,
 				2C1CFE132B970E2B0004384C /* SceneDelegate.swift in Sources */,
+				2C21F1DF2BA3677100E294AC /* GradeView.swift in Sources */,
 				2C700E492BA0DFC2009F1BB4 /* Localization.swift in Sources */,
+				2C21F1E32BA3679200E294AC /* GradeViewModel.swift in Sources */,
+				2C21F1E72BA367C100E294AC /* GradeCell.swift in Sources */,
 				2C700E542BA0EFCA009F1BB4 /* ViewController.swift in Sources */,
 				2C1CFE612B99EFA30004384C /* TabBarContoller.swift in Sources */,
 			);
