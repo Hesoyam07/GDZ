@@ -7,13 +7,22 @@
 
 import UIKit
 
+private struct GradeViewConstants {
+    static let cellLayoutItemWidth = 350
+    static let cellLayoutItemHeight = 70
+    static let itemSpacing: CGFloat = 20
+    static let cellId = String(describing: GradeCell.self)
+}
+
 final class GradeView: UIViewController {
+    private let gradeViewModel = GradeViewModel()
     //MARK: UI elements
     private let gradeCollection: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         cv.backgroundColor = .viewBackgroundColor
-        cv.register(UINib(nibName: "GradeCell", bundle: nil), forCellWithReuseIdentifier: "GradeCell")
+        cv.register(UINib(nibName: GradeViewConstants.cellId, bundle: nil), forCellWithReuseIdentifier: GradeViewConstants.cellId)
+        cv.allowsSelection = true
         return cv
         
     }()
@@ -28,14 +37,14 @@ final class GradeView: UIViewController {
     }
     //MARK: Private methods
     private func setupCollectionDataSource() {
+        gradeCollection.delegate = self
         gradeCollection.dataSource = self
     }
     private func setupCollectionLayout(collection: UICollectionView) {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 350, height: 70)
+        flowLayout.itemSize = CGSize(width: GradeViewConstants.cellLayoutItemWidth, height: GradeViewConstants.cellLayoutItemHeight)
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 20
-        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = GradeViewConstants.itemSpacing
         collection.collectionViewLayout = flowLayout
     }
     private func setupLayout() {
@@ -46,25 +55,52 @@ final class GradeView: UIViewController {
     }
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            
             gradeCollection.topAnchor.constraint(equalTo: view.topAnchor),
             gradeCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             gradeCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             gradeCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
         ])
-        
     }
-    
+    private func showAlert(error: String) {
+        let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
 }
-//MARK: Collection view data source methods
+//MARK: UICollectionViewDataSource methods
 extension GradeView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        11
+        gradeViewModel.gradesArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GradeCell.identifier, for: indexPath) as! GradeCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GradeCell.identifier, for: indexPath) as? GradeCell else {
+            return UICollectionViewCell()
+        }
+        cell.gradeLabel.text = gradeViewModel.gradesArr[indexPath.row]
         return cell
     }
+    
 }
+//MARK: UICollectionViewDelegate methods
+extension GradeView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? GradeCell
+        let selectedGrade = indexPath.item + 1
+        cell?.configureCellSelected()
+        self.gradeViewModel.fetchBooks(grade: selectedGrade){ result in
+            switch result {
+            case .success(let data):
+                let vc = ViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            
+            case .failure(let error):
+                self.showAlert(error: error.localizedDescription )
+            
+            }
+        }
+        
+    }
+}
+
