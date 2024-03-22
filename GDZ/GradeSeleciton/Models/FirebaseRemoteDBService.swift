@@ -23,17 +23,21 @@ private struct FirebaseConstants {
 final class FirebaseRemoteDBService {
     private let ref = Database.database(url: FirebaseConstants.urlDataBase).reference()
     func getBooks(grade: Int, completion: @escaping (Result<[BookModel], NetworkError>) -> Void) {
-        ref.child(FirebaseConstants.referenceChild).queryOrdered(byChild:FirebaseConstants.childQuery).queryEqual(toValue: grade).observe(.value, with: { [weak self] (snapshot) in
-            let childrenSnapshotValue = snapshot.children.compactMap({ ($0 as? DataSnapshot)?.value}) as! [[String: Any]]
-            let data = try? JSONSerialization.data(withJSONObject: childrenSnapshotValue)
-            let jsonDecoder = JSONDecoder()
-            let model = try! jsonDecoder.decode([BookModel].self, from: data!)
-            print("model is \(model)")
-            print("data is \(data)")
-            completion(.success(model))
-        })
+        ref.child(FirebaseConstants.referenceChild).queryOrdered(byChild:FirebaseConstants.childQuery).queryEqual(toValue: grade).observe(.value, with: { (snapshot) in
+            let childrenSnapshotValue = try! snapshot.children.compactMap({ ($0 as? DataSnapshot)?.value}) as! [[String: Any]]
+            do {
+                let data = try JSONSerialization.data(withJSONObject: childrenSnapshotValue)
+                let jsonDecoder = JSONDecoder()
+                let model = try jsonDecoder.decode([BookModel].self, from: data)
+                completion(.success(model))
+            } catch {
+                completion(.failure(NetworkError.decodingFailure(description: "Data can't be decoded")))
+            }
+        }) { error in
+            completion(.failure(NetworkError.network(description: "Network error")))
+        }
     }
 }
-    
-    
-    
+
+
+

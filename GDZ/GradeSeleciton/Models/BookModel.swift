@@ -7,6 +7,17 @@
 
 import Foundation
 
+struct BookEntity: Decodable {
+    let iTunesId: String?
+    let title: String?
+    let authors: String?
+    let subject: String?
+    let grade: Int?
+    let publisher: String?
+    let coverURL: String?
+    let price: String?
+    let pages: [PagesModelEntity]?
+}
 
 struct BookModel: Decodable {
     let iTunesProductId: String?
@@ -30,17 +41,17 @@ struct BookModel: Decodable {
         case price
         case bookPages = "book_pages"
     }
-//    var dto: [PagesModelEntity] {
-//         {
-//            PagesModelEntity(
-//                pageBookId: $0.pageBookId,
-//                pageTitle: $0.pageTitle,
-//                pageDescription: $0.pageDescription,
-//                pageUnlocked: $0.pageUnlocked,
-//                sectionTitle: $0.sectionTitle
-//            )
-//        }
-//    }
+    var dto: BookEntity {
+        BookEntity(iTunesId: iTunesProductId,
+                   title: bookTitle,
+                   authors: bookAuthors,
+                   subject: bookSubject,
+                   grade: bookGrade,
+                   publisher: bookPublisher,
+                   coverURL: bookCoverURL,
+                   price: price,
+                   pages: bookPages)
+    }
 }
 struct PagesModelEntity: Decodable {
     let pageBookId: String?

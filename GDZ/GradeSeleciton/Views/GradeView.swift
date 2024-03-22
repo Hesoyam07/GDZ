@@ -67,18 +67,23 @@ final class GradeView: UIViewController {
         alert.addAction(action)
         present(alert, animated: true)
     }
+    private func pushVC() {
+        let vc = ViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 //MARK: UICollectionViewDataSource methods
 extension GradeView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         gradeViewModel.gradesArr.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GradeCell.identifier, for: indexPath) as? GradeCell else {
             return UICollectionViewCell()
         }
-        cell.gradeLabel.text = gradeViewModel.gradesArr[indexPath.row]
+        cell.gradeLabel.text = gradeViewModel.gradesArr[indexPath.item]
+        let selection = cell.isSelected
+        cell.configureCell(isSelected: selection)
         return cell
     }
     
@@ -87,20 +92,18 @@ extension GradeView: UICollectionViewDataSource {
 extension GradeView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? GradeCell
-        let selectedGrade = indexPath.item + 1
+        let selectedGrade = indexPath.row + 1
         cell?.configureCellSelected()
-        self.gradeViewModel.fetchBooks(grade: selectedGrade){ result in
-            switch result {
-            case .success(let data):
-                let vc = ViewController()
-                self.navigationController?.pushViewController(vc, animated: true)
-            
-            case .failure(let error):
-                self.showAlert(error: error.localizedDescription )
-            
+        self.gradeViewModel.fetchBooks(grade: selectedGrade) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    self.pushVC()
+                case .failure(let error):
+                    self.showAlert(error: error.localizedDescription)
+                }
             }
         }
-        
     }
 }
 

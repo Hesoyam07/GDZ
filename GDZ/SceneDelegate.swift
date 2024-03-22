@@ -16,10 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
+
         let viewController = GradeView()
-            window.rootViewController = viewController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.isNavigationBarHidden = true
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
             self.window = window
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

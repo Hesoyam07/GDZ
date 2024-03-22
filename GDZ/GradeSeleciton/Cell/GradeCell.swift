@@ -14,9 +14,10 @@ private struct GradeCellConstants {
 
 final class GradeCell: UICollectionViewCell {
     static let identifier = "GradeCell"
-
+    //MARK: UI elements
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var gradeLabel: UILabel!
+    //MARK: LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         self.isUserInteractionEnabled = true
@@ -24,22 +25,33 @@ final class GradeCell: UICollectionViewCell {
         setupCellLayer()
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+        backgroundColor = UIColor.clear
+        gradeLabel.textColor = UIColor.buyButtonColor
+        isSelected = false
+    }
+    //MARK: Methods
     private func setupCellLayer() {
         layer.cornerRadius = GradeCellConstants.cellCornerRadius
         layer.borderWidth = GradeCellConstants.cellBorderWidth
         layer.borderColor = UIColor.bookTitleTextColor.cgColor
     }
+    func configureCell(isSelected: Bool) {
+        if isSelected {
+            configureCellSelected()
+        } else {
+            prepareForReuse()
+        }
+    }
 
     func configureCellSelected() {
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-        backgroundColor = UIColor.buyButtonColor
-        gradeLabel.textColor = UIColor.white
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+            backgroundColor = UIColor.buyButtonColor
+            gradeLabel.textColor = UIColor.white
     }
-    override func prepareForReuse() {
-        activityIndicator.isHidden = true
-        activityIndicator.stopAnimating()
-        backgroundColor = UIColor.clear
-        gradeLabel.textColor = UIColor.buyButtonColor
-    }
+    
 }
